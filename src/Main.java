@@ -27,6 +27,7 @@ public class Main {
         System.out.println("Total de la compra con impuestos y descuento: $" + totalCompra);
     }
 
+
     // Calcula el total de una compra en base a los productos y cantidades
     public static double calcularTotalCompra(List<String> productos, List<Double> precios, int[] cantidades) {
         double subtotal = calcularSubtotal(productos, precios, cantidades);
@@ -34,13 +35,13 @@ public class Main {
         double totalConDescuento = subtotal - descuento;
 
         double totalConImpuestos = calcularImpuestos(totalConDescuento);
-        return totalConImpuestos;
+        return totalConDescuento;
     }
 
     // Calcula el subtotal de la compra
     public static double calcularSubtotal(List<String> productos, List<Double> precios, int[] cantidades) {
         double subtotal = 0;
-        for (int i = 0; i <= productos.size(); i++) {
+        for (int i = 0; i < productos.size(); i++) {
             subtotal += precios.get(i) * cantidades[i];
         }
         System.out.println("Subtotal: $" + subtotal);
